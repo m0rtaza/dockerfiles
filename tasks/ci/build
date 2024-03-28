@@ -1,4 +1,4 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 
 docker login --username ${DOCKER_USERNAME} --password-stdin <<< ${DOCKER_PASSWORD}
 
