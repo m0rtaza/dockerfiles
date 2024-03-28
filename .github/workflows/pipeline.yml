@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_USERNAME: ${DOCKER_USERNAME}
+      DOCKER_PASSWORD: ${DOCKER_PASSWORD}
+    steps:
+      - uses: actions/checkout@v4
+      - name: build images
+        run: |
+          ./tasks/ci/build.sh
