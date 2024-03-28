@@ -9,3 +9,4 @@ build_push() {
 }
 
 build_push ci-dotnet-sdk
+build_push ci-dotnet-aspnet
