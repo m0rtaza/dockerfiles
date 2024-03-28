@@ -1,0 +1,11 @@
+#!/user/bin/env bash
+
+docker login --username ${DOCKER_USERNAME} --password-stdin <<< ${DOCKER_PASSWORD}
+
+build_push() {
+    local REPO=m0rtaza/${1}
+    docker build -t ${REPO}:latest ./src/${1}
+    docker push ${REPO}:latest
+}
+
+build_push ci-dotnet-sdk
